@@ -99,10 +99,10 @@ faqItems.forEach(item => {
   });
 });
 
-// ── Contact form ───────────────────────────────────
+// ── Contact form (Netlify Forms — AJAX submit) ─────
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', e => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('[type="submit"]');
     const original = btn.textContent;
@@ -110,7 +110,19 @@ if (contactForm) {
     btn.disabled = true;
     btn.style.opacity = '0.7';
 
-    setTimeout(() => {
+    try {
+      // Build form-encoded payload (what Netlify Forms expects)
+      const formData = new FormData(contactForm);
+      const body = new URLSearchParams(formData).toString();
+
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body
+      });
+
+      if (!res.ok) throw new Error('Submission failed');
+
       btn.textContent = '✓ Request Received! We\'ll be in touch soon.';
       btn.style.background = 'linear-gradient(135deg, #22C55E, #16a34a)';
       btn.style.opacity = '1';
@@ -120,7 +132,12 @@ if (contactForm) {
         btn.style.background = '';
         btn.disabled = false;
       }, 4000);
-    }, 1200);
+    } catch (err) {
+      btn.textContent = '✗ Something went wrong — please call us';
+      btn.style.background = '#dc2626';
+      btn.style.opacity = '1';
+      btn.disabled = false;
+    }
   });
 }
 

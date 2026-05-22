@@ -126,7 +126,9 @@
           <p class="form-title">Get Your Free Solar Savings Estimate</p>
           <p class="form-subtitle">Takes 2 minutes. A consultant will follow up with a custom estimate for your home.</p>
 
-          <form id="contactForm" novalidate>
+          <form id="contactForm" name="solar-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <input type="hidden" name="form-name" value="solar-quote" />
+            <p style="display:none;"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
             <div class="form-row">
               <div class="form-group">
                 <label for="firstName">First Name *</label>
