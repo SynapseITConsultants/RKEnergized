@@ -1,4 +1,4 @@
-/* RK Energized — Main JS */
+/* R&K Energized — Main JS */
 
 // ── Nav scroll effect ──────────────────────────────
 const nav = document.getElementById('nav');
