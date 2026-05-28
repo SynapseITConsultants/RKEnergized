@@ -1,6 +1,6 @@
 /* ===================================================
    RK ENERGIZED — Main Stylesheet
-   Residential Solar | Authorized Sunrun Dealer
+   Residential Solar
    =================================================== */
 
 :root {
@@ -22,8 +22,8 @@
   --sky:          #38BDF8;
   --sky-dim:      rgba(56,189,248,0.1);
 
-  --sunrun-green: #2EAA5E;
-  --sunrun-dim:   rgba(46,170,94,0.12);
+  --brand-green: #2EAA5E;
+  --brand-green-dim:   rgba(46,170,94,0.12);
 
   --white:        #FFFFFF;
   --off-white:    #E8EBF2;
@@ -230,26 +230,26 @@ ul { list-style: none; }
   text-transform: uppercase;
   margin-top: 2px;
 }
-.nav__sunrun-badge {
+.nav__badge {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  background: var(--sunrun-dim);
+  background: var(--brand-green-dim);
   border: 1px solid rgba(46,170,94,0.25);
   border-radius: 50px;
   padding: 0.3rem 0.75rem;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--sunrun-green);
+  color: var(--brand-green);
   text-transform: uppercase;
   white-space: nowrap;
 }
-.nav__sunrun-badge::before {
+.nav__badge::before {
   content: '';
   width: 6px; height: 6px;
   border-radius: 50%;
-  background: var(--sunrun-green);
+  background: var(--brand-green);
   flex-shrink: 0;
 }
 .nav__links {
@@ -364,13 +364,13 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--sunrun-dim);
+  background: var(--brand-green-dim);
   border: 1px solid rgba(46,170,94,0.28);
   border-radius: 50px;
   padding: 0.45rem 1.1rem;
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--sunrun-green);
+  color: var(--brand-green);
   margin-bottom: 1.75rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -378,7 +378,7 @@ ul { list-style: none; }
 .badge-dot {
   width: 7px; height: 7px;
   border-radius: 50%;
-  background: var(--sunrun-green);
+  background: var(--brand-green);
   animation: pulse 2.2s ease-in-out infinite;
 }
 @keyframes pulse {
@@ -811,48 +811,48 @@ ul { list-style: none; }
 .program-chip--sky { background: var(--sky-dim); border-color: rgba(56,189,248,0.2); color: var(--sky); }
 .program-chip--purple { background: rgba(139,92,246,0.1); border-color: rgba(139,92,246,0.25); color: #a78bfa; }
 
-/* ── Sunrun Trust Bar ───────────────────────────── */
-.sunrun-bar {
+/* ── Why Choose Us Bar ──────────────────────────── */
+.whyus-bar {
   background: var(--black);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 3.5rem 0;
 }
-.sunrun-bar__inner {
+.whyus-bar__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
   flex-wrap: wrap;
 }
-.sunrun-bar__text { max-width: 420px; }
-.sunrun-bar__text h3 {
+.whyus-bar__text { max-width: 420px; }
+.whyus-bar__text h3 {
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--white);
   margin-bottom: 0.5rem;
 }
-.sunrun-bar__text p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
-.sunrun-stats {
+.whyus-bar__text p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+.whyus-stats {
   display: flex;
   gap: 2.5rem;
   flex-wrap: wrap;
 }
-.sunrun-stat { text-align: center; }
-.sunrun-stat__num {
+.whyus-stat { text-align: center; }
+.whyus-stat__num {
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 700;
   color: var(--white);
 }
-.sunrun-stat__num span { color: var(--green); }
-.sunrun-stat__lbl { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.whyus-stat__num span { color: var(--green); }
+.whyus-stat__lbl { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
 .authorized-badge {
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: var(--sunrun-dim);
+  background: var(--brand-green-dim);
   border: 1px solid rgba(46,170,94,0.25);
   border-radius: var(--radius-sm);
   padding: 1rem 1.5rem;
@@ -865,7 +865,7 @@ ul { list-style: none; }
   color: var(--white);
   margin-bottom: 0.15rem;
 }
-.authorized-badge span { font-size: 0.75rem; color: var(--sunrun-green); }
+.authorized-badge span { font-size: 0.75rem; color: var(--brand-green); }
 
 /* ── Testimonials ───────────────────────────────── */
 .testimonials-section { background: var(--dark); }
@@ -1026,14 +1026,14 @@ ul { list-style: none; }
   margin-top: 1rem;
   max-width: 300px;
 }
-.footer__sunrun-note {
+.footer__note {
   margin-top: 1.25rem;
   padding: 0.875rem 1rem;
-  background: var(--sunrun-dim);
+  background: var(--brand-green-dim);
   border: 1px solid rgba(46,170,94,0.2);
   border-radius: var(--radius-xs);
   font-size: 0.75rem;
-  color: var(--sunrun-green);
+  color: var(--brand-green);
   line-height: 1.55;
 }
 .footer__social { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
@@ -1265,7 +1265,7 @@ ul { list-style: none; }
   font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--sunrun-green);
+  color: var(--brand-green);
 }
 .partnership-logo__text span {
   font-size: 0.72rem;
@@ -1285,8 +1285,8 @@ ul { list-style: none; }
   content: '✓';
   width: 22px; height: 22px;
   border-radius: 50%;
-  background: var(--sunrun-dim);
-  color: var(--sunrun-green);
+  background: var(--brand-green-dim);
+  color: var(--brand-green);
   font-size: 0.65rem;
   font-weight: 700;
   display: flex;
@@ -1698,7 +1698,7 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   .nav__links, .btn--nav { display: none; }
-  .nav__sunrun-badge { display: none; }
+  .nav__badge { display: none; }
   .nav__hamburger { display: flex; }
 
   .steps-grid { grid-template-columns: 1fr 1fr; }
@@ -1710,7 +1710,7 @@ ul { list-style: none; }
   .team-grid { grid-template-columns: 1fr 1fr; }
   .footer__inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .footer__links { grid-template-columns: 1fr 1fr; }
-  .sunrun-bar__inner { flex-direction: column; align-items: flex-start; }
+  .whyus-bar__inner { flex-direction: column; align-items: flex-start; }
   .about-values { grid-template-columns: 1fr 1fr; }
   .how-step { grid-template-columns: 1fr; gap: 1.5rem; }
   .how-step__num { font-size: 2.5rem; }
@@ -1728,5 +1728,5 @@ ul { list-style: none; }
   .cta-banner__actions { flex-direction: column; align-items: center; }
   .cta-banner__actions .btn { width: 100%; justify-content: center; }
   .form-row { grid-template-columns: 1fr; }
-  .sunrun-stats { gap: 1.5rem; }
+  .whyus-stats { gap: 1.5rem; }
 }
