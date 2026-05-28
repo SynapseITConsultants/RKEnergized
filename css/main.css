@@ -4,33 +4,33 @@
    =================================================== */
 
 :root {
-  /* ===== LIGHT THEME ===== */
-  --black:        #E8F1FB;   /* main background: very light blue */
-  --dark:         #DCEAF8;   /* alternating section background */
-  --card-bg:      #FFFFFF;   /* cards */
-  --card-bg-2:    #F1F7FD;   /* alternate card */
-  --border:       rgba(15,42,69,0.10);
-  --border-warm:  rgba(245,166,35,0.35);
+  /* ===== OCEAN BLUE THEME (high-contrast) ===== */
+  --black:        #2F557F;   /* main background: deep ocean blue */
+  --dark:         #284A6F;   /* alternating section background (deeper) */
+  --card-bg:      rgba(8,24,42,0.34);   /* dark frosted glass cards */
+  --card-bg-2:    rgba(8,24,42,0.24);
+  --border:       rgba(255,255,255,0.16);
+  --border-warm:  rgba(245,166,35,0.55);
 
-  --amber:        #F5A623;
-  --amber-lt:     #FFB84D;
-  --amber-dim:    rgba(245,166,35,0.14);
-  --amber-glow:   rgba(245,166,35,0.35);
+  --amber:        #FFB430;
+  --amber-lt:     #FFC960;
+  --amber-dim:    rgba(255,180,48,0.20);
+  --amber-glow:   rgba(255,180,48,0.42);
 
-  --green:        #16A34A;
-  --green-dim:    rgba(22,163,74,0.12);
+  --green:        #45DC8A;
+  --green-dim:    rgba(69,220,138,0.20);
 
-  --sky:          #2E90D9;
-  --sky-dim:      rgba(46,144,217,0.12);
+  --sky:          #9AD6F8;
+  --sky-dim:      rgba(154,214,248,0.20);
 
-  --brand-green: #2EAA5E;
-  --brand-green-dim:   rgba(46,170,94,0.14);
+  --brand-green: #57D894;
+  --brand-green-dim:   rgba(87,216,148,0.20);
 
-  --white:        #0F2A45;   /* highest-emphasis text: deep navy */
-  --off-white:    #21384E;   /* secondary strong text */
-  --muted:        #5C6B7E;   /* muted text */
-  --text:         #2E4156;   /* body text */
-  --pure-white:   #FFFFFF;   /* literal white for dark sections */
+  --white:        #FFFFFF;          /* highest-emphasis text */
+  --off-white:    #F4F8FC;          /* secondary strong text */
+  --muted:        #D2E0F0;          /* muted light text (high readability) */
+  --text:         #EEF4FB;          /* body text */
+  --pure-white:   #FFFFFF;
 
   --radius:       18px;
   --radius-sm:    12px;
@@ -1734,50 +1734,72 @@ ul { list-style: none; }
 }
 
 /* ===================================================
-   LIGHT THEME ADJUSTMENTS
-   Fixes for sections originally designed for dark bg
+   OCEAN BLUE THEME ADJUSTMENTS
+   Medium ocean-blue background · white text · frosted cards
    =================================================== */
 
-/* Nav — light, frosted when scrolled */
+/* Nav — ocean-blue frosted when scrolled */
 .nav.scrolled {
-  background: rgba(232,241,251,0.85);
+  background: rgba(47,85,127,0.88);
   border-bottom: 1px solid var(--border);
 }
 .nav__mobile {
-  background: rgba(232,241,251,0.98);
+  background: rgba(40,74,111,0.98);
 }
 
-/* Hero — faint grid + softened color orbs on light bg */
+/* Hero — faint white grid + color orbs on blue bg */
 .hero__grid,
 .page-hero::before {
   background-image:
-    linear-gradient(rgba(15,42,69,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15,42,69,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
 }
-.hero__orb { opacity: 0.7; }
+.hero__orb { opacity: 0.55; }
 
-/* Marquee strip */
-.marquee-bar { background: var(--pure-white); }
+/* Frosted glass effect on key cards */
+.savings-card,
+.program-card,
+.testimonial-card,
+.team-card,
+.value-card,
+.included-card,
+.benefit-item,
+.contact-form-card,
+.program-full-card,
+.benefits-big-card,
+.partnership-card {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
 
-/* Progress bars — were white-on-dark, now need dark fills on white cards */
+/* Marquee — frosted strip */
+.marquee-bar { background: rgba(8,24,42,0.22); }
+
+/* Progress bars — light fills on dark frosted cards */
 .savings-bar__track,
-.bill-bar-wrap { background: rgba(15,42,69,0.08); }
+.bill-bar-wrap { background: rgba(255,255,255,0.14); }
 .savings-bar__fill--before,
-.bill-bar--before { background: rgba(15,42,69,0.22); }
-.savings-stat { background: rgba(15,42,69,0.04); }
+.bill-bar--before { background: rgba(255,255,255,0.40); }
+.savings-stat { background: rgba(8,24,42,0.28); }
 
-/* Form fields — visible on white cards */
+/* Form fields — dark frosted, white text */
 .form-group input,
 .form-group select,
-.form-group textarea { background: rgba(15,42,69,0.03); }
+.form-group textarea {
+  background: rgba(8,24,42,0.34);
+  color: var(--pure-white);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255,255,255,0.55); }
+.form-group select option { background: #284A6F; color: #fff; }
 
-/* Featured cards — were dark gradients, now light tinted */
+/* Featured cards — slightly stronger dark frosted gradient */
 .program-card--featured,
 .testimonial-card--featured {
-  background: linear-gradient(135deg, #FFFFFF 0%, #E8F1FB 100%);
+  background: linear-gradient(135deg, rgba(8,24,42,0.42) 0%, rgba(8,24,42,0.22) 100%);
 }
 
-/* Card hover shadows tuned for light bg */
+/* Card hover shadows for dark/saturated bg */
 .service-card:hover,
 .program-card:hover,
 .testimonial-card:hover,
@@ -1787,24 +1809,24 @@ ul { list-style: none; }
 .value-card:hover,
 .included-card:hover,
 .benefit-item:hover {
-  box-shadow: 0 18px 48px rgba(15,42,69,0.12);
+  box-shadow: 0 18px 48px rgba(8,24,42,0.30);
 }
 
-/* CTA banner — stays a bold navy accent band with white text */
+/* CTA banner — deep navy accent band, white text */
 .cta-banner {
-  background: linear-gradient(135deg, #0F2A45 0%, #143A5C 55%, #0F2A45 100%);
+  background: linear-gradient(135deg, #0B2238 0%, #123451 55%, #0B2238 100%);
   border-top: 1px solid var(--border);
 }
 .cta-banner h2 { color: var(--pure-white); }
 .cta-banner p { color: rgba(255,255,255,0.82); }
 .cta-banner__note { color: rgba(255,255,255,0.6); }
-.btn--white { background: var(--pure-white); color: #0F2A45; }
+.btn--white { background: var(--pure-white); color: #0B2238; }
 .btn--white:hover { background: #EAF2FB; }
 .btn--ghost-white { color: var(--pure-white); border-color: rgba(255,255,255,0.4); }
 .btn--ghost-white:hover { background: rgba(255,255,255,0.12); border-color: var(--pure-white); }
 
-/* Footer — stays deep navy with light text */
-.footer { background: #0F2A45; }
+/* Footer — deep navy with light text */
+.footer { background: #0B2238; }
 .footer__brand p { color: rgba(255,255,255,0.62); }
 .footer .logo-energized { color: var(--pure-white); }
 .footer__col h4 { color: var(--pure-white); }
@@ -1820,10 +1842,10 @@ ul { list-style: none; }
 }
 .social-link {
   border-color: rgba(255,255,255,0.22);
-  color: rgba(255,255,255,0.62);
+  color: rgba(255,255,255,0.7);
 }
 .social-link:hover {
   border-color: var(--amber);
   color: var(--amber);
-  background: rgba(245,166,35,0.15);
+  background: rgba(255,176,46,0.18);
 }
