@@ -1913,6 +1913,40 @@ ul { list-style: none; }
   padding-top: 1rem;
   border-top: 1px solid var(--border);
 }
+
+/* Prominent product name — the standout element on each product card */
+.product-name {
+  display: inline-block;
+  position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  padding-top: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+.product-name::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 48px; height: 4px;
+  border-radius: 99px;
+  background: currentColor;
+}
+.product-name--amber { color: var(--amber); }
+.product-name--green { color: var(--green); }
+.product-name--sky   { color: var(--sky); }
+
+/* Marketing tagline — now the supporting subhead under the name */
+.program-full-body .product-tagline {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--off-white);
+  margin-bottom: 0.85rem;
+}
+
 @media (max-width: 768px) {
   .flow-grid { flex-direction: column; }
   .flow-arrow { transform: rotate(90deg); justify-content: center; padding: 0.25rem 0; }
