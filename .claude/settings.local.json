@@ -3,7 +3,14 @@
     "allow": [
       "Bash(Remove-Item \"C:\\\\Users\\\\glbonto\\\\OneDrive - Five9\\\\Desktop\\\\Apps\\\\RK Energized\\\\services.html\" -ErrorAction SilentlyContinue)",
       "Bash(Remove-Item \"C:\\\\Users\\\\glbonto\\\\OneDrive - Five9\\\\Desktop\\\\Apps\\\\RK Energized\\\\projects.html\" -ErrorAction SilentlyContinue)",
-      "Bash(Write-Host \"Old pages removed\")"
+      "Bash(Write-Host \"Old pages removed\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(command -v node)",
+      "Bash(command -v npx)",
+      "Bash(command -v py)",
+      "Bash(where.exe node *)",
+      "Bash(where.exe py *)",
+      "Bash(where.exe python3 *)"
     ]
   }
 }
