@@ -141,6 +141,54 @@ if (contactForm) {
   });
 }
 
+// ── Product image gallery (clickable thumbnails) ───
+// Works automatically once real images exist in /images.
+// Until then, missing files are ignored and placeholders stay.
+document.querySelectorAll('[data-gallery]').forEach(gallery => {
+  const mainImg = gallery.querySelector('.gallery-main__img');
+  const thumbs  = gallery.querySelectorAll('.gallery-thumb');
+  if (!mainImg || !thumbs.length) return;
+
+  // Swap the main image — only show it if the file actually loads
+  function showMain(src) {
+    if (!src) return;
+    const test = new Image();
+    test.onload = () => {
+      mainImg.src = src;
+      mainImg.classList.add('is-loaded');
+    };
+    test.onerror = () => {
+      mainImg.classList.remove('is-loaded'); // keep placeholder
+    };
+    test.src = src;
+  }
+
+  thumbs.forEach(thumb => {
+    const src = thumb.dataset.img;
+
+    // If a thumb's image exists, show it as the thumbnail background
+    if (src) {
+      const probe = new Image();
+      probe.onload = () => {
+        thumb.style.backgroundImage = `url("${src}")`;
+        thumb.classList.add('has-img');
+      };
+      probe.src = src;
+    }
+
+    // Click to set the main image
+    thumb.addEventListener('click', () => {
+      thumbs.forEach(t => t.classList.remove('gallery-thumb--active'));
+      thumb.classList.add('gallery-thumb--active');
+      showMain(src);
+    });
+  });
+
+  // On load, try to show the active thumb's image as the main image
+  const active = gallery.querySelector('.gallery-thumb--active') || thumbs[0];
+  if (active) showMain(active.dataset.img);
+});
+
 // ── Smooth anchor scroll ───────────────────────────
 document.querySelectorAll('a[href*="#"]').forEach(link => {
   link.addEventListener('click', e => {
