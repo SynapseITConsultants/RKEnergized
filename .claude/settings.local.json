@@ -14,7 +14,8 @@
       "Bash(where.exe php *)",
       "Bash(where.exe dotnet *)",
       "Bash(where.exe ruby *)",
-      "Bash(where.exe powershell *)"
+      "Bash(where.exe powershell *)",
+      "WebFetch(domain:rkenergized.com)"
     ]
   }
 }
