@@ -1335,6 +1335,29 @@ ul { list-style: none; }
 .program-full-card--green::before { background: linear-gradient(to bottom, var(--green), #16a34a); }
 .program-full-card--sky::before   { background: linear-gradient(to bottom, var(--sky), #0284c7); }
 .program-full-card--purple::before { background: linear-gradient(to bottom, #8b5cf6, #6d28d9); }
+
+/* "Most Popular" featured treatment */
+.program-full-card--featured {
+  border: 2px solid var(--green);
+  box-shadow: 0 0 0 1px rgba(63,213,132,0.25), 0 24px 56px rgba(8,24,42,0.35);
+}
+.program-full-card--featured::before { opacity: 1; width: 4px; }
+.program-full-card--featured::after {
+  content: 'MOST POPULAR';
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: var(--green);
+  color: #06251A;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.45rem 0.95rem;
+  border-radius: 99px;
+  box-shadow: 0 6px 18px rgba(63,213,132,0.45);
+  z-index: 2;
+}
 .program-full-card:hover {
   border-color: rgba(255,255,255,0.1);
   transform: translateX(4px);
