@@ -1897,6 +1897,19 @@ ul { list-style: none; }
   background-repeat: no-repeat;
   min-height: 100svh;
 }
+
+/* On mobile, the landscape photo would lose its left side (logo) under
+   "cover" sizing. Switch the image to "contain" so the WHOLE photo
+   (logo + installer) fits inside, and shrink the hero to match. */
+@media (max-width: 768px) {
+  .hero {
+    background-size: cover, contain;
+    background-position: center, center;
+    background-color: #08182C;
+    min-height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
 /* Decorative grid & orbs hidden — they competed with the photo */
 .hero__bg { display: none; }
 /* Scroll indicator stays — small visual cue at the bottom */
