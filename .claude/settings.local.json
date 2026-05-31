@@ -10,7 +10,11 @@
       "Bash(command -v py)",
       "Bash(where.exe node *)",
       "Bash(where.exe py *)",
-      "Bash(where.exe python3 *)"
+      "Bash(where.exe python3 *)",
+      "Bash(where.exe php *)",
+      "Bash(where.exe dotnet *)",
+      "Bash(where.exe ruby *)",
+      "Bash(where.exe powershell *)"
     ]
   }
 }

@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "rk-static",
-      "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8123"],
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", ".claude/server.ps1"],
       "port": 8123
     }
   ]
