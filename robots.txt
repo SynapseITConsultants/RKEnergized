@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /netlify/
-Disallow: /.claude/
 
 Sitemap: https://rkenergized.com/sitemap.xml
